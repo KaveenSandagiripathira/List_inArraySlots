@@ -1,8 +1,7 @@
 
 # List_inArraySlots Class
 ## hw4D16
-
-##by Kaveen Sandagiripathira and Rachael Cheung
+by Kaveen Sandagiripathira and Rachael Cheung
 
 #### Fields:
 ```
