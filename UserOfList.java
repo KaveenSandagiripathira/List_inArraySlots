@@ -19,21 +19,21 @@ public class UserOfList {
         System.out.println("initial population of " + list.size() + " elements:");
         System.out.println( list);
         
-        // // Add enough elements that expansion is expected
-        // for( ; i < 15; i++ ) {
+        // Add enough elements that expansion is expected
+        for( ; i < 15; i++ ) {
             
-            // if( i == 10) System.out.println( "expansion expected");
+            if( i == 10) System.out.println( "expansion expected");
             
-            // list.add( -i);
-            // System.out.println( "number of elements: " + list.size() );
-        // }
-        // System.out.println("result of second population: " + list.size() + " elements:");
-        // System.out.println( list);
+            list.add( -i);
+            System.out.println( "number of elements: " + list.size() );
+        }
+        System.out.println("result of second population: " + list.size() + " elements:");
+        System.out.println( list);
         
-        // // Trust no one.
-        // for( ; i < 35; i++ ) 
-            // list.add( -i);
-        // System.out.println("after second expansion: " + list.size() + " elements:");
-        // System.out.println( list);
+        // Trust no one.
+        for( ; i < 35; i++ ) 
+            list.add( -i);
+        System.out.println("after second expansion: " + list.size() + " elements:");
+        System.out.println( list);
     }
 }

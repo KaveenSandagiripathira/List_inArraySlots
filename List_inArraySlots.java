@@ -23,7 +23,7 @@ public class List_inArraySlots {
       @return the number of elements in this list
      */
     public int size() {
-		returns numElements;
+		return numElements;
     }
 
 
@@ -62,13 +62,12 @@ public class List_inArraySlots {
       Double the capacity of the List_inArraySlots, 
       preserving existing data
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
-           // /* S.O.P. rules for debugging:
-              // Working methods should be silent. But during 
-              // development, the programmer must verify that 
-              // this method is called when that is appropriate.
-              // So test using the println(), then comment it out.
-              // */
-     // }
+     private void expand() {
+		 numElements *= 2;
+		 tempArray = new int[numElements];
+		 for (int pos = 0 ; pos < masterArray.length ; pos++){
+			 tempArray[pos] = masterArray[pos];
+		 }
+		 masterArray = tempArray;
+     }
 }
