@@ -1,20 +1,20 @@
 
 # List_inArraySlots Class
-## by Kaveen Sandagiripathira and Rachael Cheung
+### by Kaveen Sandagiripathira and Rachael Cheung
 
 #### Fields:
 ```
-enter fields
+<<enter fields>>
 ```
 
 #### Constructor(s):
 ```
-enter constructors
+<<enter constructors>>
 ```
 
 #### Methods:
 ``` 
-enter methods
+<<enter methods>>
 ```
 
 ### Remarks:
