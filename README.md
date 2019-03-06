@@ -2,8 +2,7 @@
 # List_inArraySlots Class
 ## hw4D16
 
-##:point_down:Kaveen Sandagiripathira
-##:point_up_2:Rachael Cheung
+##by Kaveen Sandagiripathira and Rachael Cheung
 
 #### Fields:
 ```
