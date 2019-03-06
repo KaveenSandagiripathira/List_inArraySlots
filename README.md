@@ -1,3 +1,4 @@
+
 # List_inArraySlots Class
 ## hw4D16
 
@@ -21,7 +22,7 @@ enter methods
 ```
 
 ### Remarks:
-- Remark 1
-- Remark 2
-- Remark 3
+1. Remark 1
+2. Remark 2
+3. Remark 3
 
