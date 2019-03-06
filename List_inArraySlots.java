@@ -63,6 +63,7 @@ public class List_inArraySlots {
       preserving existing data
      */
      private void expand() {
+		 System.out.println("expand ... (for debugging)");
 		 numElements *= 2;
 		 tempArray = new int[numElements];
 		 for (int pos = 0 ; pos < masterArray.length ; pos++){
