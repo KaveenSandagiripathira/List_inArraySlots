@@ -5,8 +5,8 @@ by Kaveen Sandagiripathira and Rachael Cheung
 ## List_inArraySlots Class
 #### Fields:
 ```
-// integer number of slots
-private int slots;
+// integer number of elements in list
+private int numElements;
 ```
 
 #### Constructor(s):
