@@ -1,6 +1,6 @@
 
 # List_inArraySlots Class
-##by Kaveen Sandagiripathira and Rachael Cheung
+## by Kaveen Sandagiripathira and Rachael Cheung
 
 #### Fields:
 ```
