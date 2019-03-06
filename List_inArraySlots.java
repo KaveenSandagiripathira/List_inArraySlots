@@ -6,15 +6,15 @@
 public class List_inArraySlots {
 
     // declare fields 
-	private int numElements;	
-	private int[] masterArray;
-	private int[] tempArray;
+	private int numElements;	//number of elements in the array
+	private int[] masterArray;	//main array referred to in UserOfList
+	private int[] tempArray;	//array used to add capacity to masterArray
 
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-		numElements = 0;
+		numElements = 0; 
 		masterArray = new int[numElements];
     }
 
@@ -47,12 +47,12 @@ public class List_inArraySlots {
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
-		 numElements++;
-		 tempArray = new int[numElements];
+		 numElements++; // adds one "slot" to the array
+		 tempArray = new int[numElements]; //New Array with new length is initiated
 		 for (int pos = 0 ; pos < masterArray.length ; pos++){
-			 tempArray[pos] = masterArray[pos];
+			 tempArray[pos] = masterArray[pos]; //Preserving the existing data
 		 }
-		 tempArray[tempArray.length - 1] = value;
+		 tempArray[tempArray.length - 1] = value;  //Inputs the new value in the last slot
 		 masterArray = tempArray;
 		 return true;
      }
@@ -64,7 +64,8 @@ public class List_inArraySlots {
      */
      private void expand() {
 		 System.out.println("expand ... (for debugging)");
-		 numElements *= 2;
+		 
+		 numElements *= 2; //doubles the size of the capacity
 		 tempArray = new int[numElements];
 		 for (int pos = 0 ; pos < masterArray.length ; pos++){
 			 tempArray[pos] = masterArray[pos];
