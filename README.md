@@ -2,11 +2,11 @@
 # List_inArraySlots
 by Kaveen Sandagiripathira and Rachael Cheung
 
-##List_inArraySlots Class
+## List_inArraySlots Class
 #### Fields:
 ```
 // integer number of slots
-public int slots;
+private int slots;
 ```
 
 #### Constructor(s):
