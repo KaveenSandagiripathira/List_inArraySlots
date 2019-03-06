@@ -2,9 +2,8 @@
 # List_inArraySlots Class
 ## hw4D16
 
-### Names: 
-:point_down:Kaveen Sandagiripathira
-:point_up_2:Rachael Cheung
+##:point_down:Kaveen Sandagiripathira
+##:point_up_2:Rachael Cheung
 
 #### Fields:
 ```
