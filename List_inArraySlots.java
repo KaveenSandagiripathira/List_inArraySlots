@@ -14,7 +14,7 @@ public class List_inArraySlots {
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-		numElements = 0; 
+		numElements = 1; 
 		masterArray = new int[numElements];
     }
 
@@ -34,7 +34,9 @@ public class List_inArraySlots {
     public String toString() {
 		String output = "[";
 		for (int element : masterArray){
-			output += element + ",";
+			if (element != null){
+				output += element + ",";
+			}
 		}
 		output += "]";
 		return output;
@@ -47,13 +49,9 @@ public class List_inArraySlots {
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
-		 numElements++; // adds one "slot" to the array
-		 tempArray = new int[numElements]; //New Array with new length is initiated
-		 for (int pos = 0 ; pos < masterArray.length ; pos++){
-			 tempArray[pos] = masterArray[pos]; //Preserving the existing data
-		 }
-		 tempArray[tempArray.length - 1] = value;  //Inputs the new value in the last slot
-		 masterArray = tempArray;
+		 this.expand(); // doubles capacity
+		 //System.out.println(masterArray.toString());
+		 masterArray[(masterArray.length / 2)] = value;  //Inputs the new value in the last slot
 		 return true;
      }
 
