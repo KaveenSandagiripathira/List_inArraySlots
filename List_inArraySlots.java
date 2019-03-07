@@ -50,10 +50,15 @@ public class List_inArraySlots {
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
-		 this.expand(); // doubles capacity
-		 //System.out.println(masterArray.toString());
-		 masterArray[(masterArray.length / 2)] = value;  //Inputs the new value in the last slot
-		 return true;
+		 for (int pos = 0 ; pos <= masterArray.length ; poss++){
+			if (pos == masterArray.length){
+				expand();
+			}
+			if else (masterArray[pos] == null){
+				masterArray[pos] == value;
+				break;
+			}
+		 }
      }
 
 
