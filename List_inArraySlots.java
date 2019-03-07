@@ -34,9 +34,10 @@ public class List_inArraySlots {
     public String toString() {
 		String output = "[";
 		for (int element : masterArray){
-			if (element != null){
+			if (element == null)
+				break
+			else
 				output += element + ",";
-			}
 		}
 		output += "]";
 		return output;
