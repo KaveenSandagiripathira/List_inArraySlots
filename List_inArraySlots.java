@@ -7,14 +7,15 @@ public class List_inArraySlots {
 
     // declare fields 
 	private int numElements;	//number of elements in the array
+	private int sizeArray;      //The size of the array that is used to represent the list.
 	private int[] masterArray;	//main array referred to in UserOfList
-	private int[] tempArray;	//array used to add capacity to masterArray
 
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-		numElements = 1; 
+		numElements = 0; 
+		sizeArray = 1;
 		masterArray = new int[numElements];
     }
 
@@ -33,13 +34,15 @@ public class List_inArraySlots {
       */ 
     public String toString() {
 		String output = "[";
-		for (int element : masterArray){
-			if (element == null)
-				break
-			else
-				output += element + ",";
+		if (numElements == 0){
+			output += "]";
 		}
-		output += "]";
+		else{
+			for (int pos = 0; pos < numElements; pos++){
+				output += masterArray[pos] + ",";
+			}
+			output += "]";
+		}
 		return output;
     }
 
@@ -50,15 +53,11 @@ public class List_inArraySlots {
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
-		 for (int pos = 0 ; pos <= masterArray.length ; poss++){
-			if (pos == masterArray.length){
-				expand();
-			}
-			if else (masterArray[pos] == null){
-				masterArray[pos] == value;
-				break;
-			}
-		 }
+		 numElements++;
+		 if (numElements == masterArray.length)
+			 expand();
+		 masterArray[numElements - 1] = value;
+		 return true;
      }
 
 
@@ -68,9 +67,9 @@ public class List_inArraySlots {
      */
      private void expand() {
 		 System.out.println("expand ... (for debugging)");
-		 
-		 numElements *= 2; //doubles the size of the capacity
-		 tempArray = new int[numElements];
+		 int[] tempArray;
+		 sizeArray *= 2; //doubles the size of the capacity
+		 tempArray = new int[sizeArray];
 		 for (int pos = 0 ; pos < masterArray.length ; pos++){
 			 tempArray[pos] = masterArray[pos];
 		 }
