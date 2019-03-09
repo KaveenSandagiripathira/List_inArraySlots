@@ -5,72 +5,121 @@
 
 public class List_inArraySlots {
 
-    // declare fields 
-	private int numElements;	//number of elements in the array (not including null elements)
-	private int arraySize;      //The size of the array that is used to represent the list
-	private int[] masterArray;	//main array referred to in UserOfList
+    private int[] elements;     // container for the elements of the list
+    private int filledElements; // the number of elements in this list
+
+    private static final int INITIAL_CAPACITY = 10;
 
     /**
       Construct an empty list with a small initial capacity.
      */
     public List_inArraySlots() {
-		numElements = 0; //start at position 0
-		arraySize = 1; 
-		masterArray = new int[arraySize]; //initiates masterArray to have 1 slot
+        elements = new int[ INITIAL_CAPACITY];
+        // filledElements has been initialized to the desired value, 0
     }
 
 
-    /** 
+    /**
       @return the number of elements in this list
      */
     public int size() {
-		return numElements;
+        return filledElements;
     }
 
 
-     /** 
+     /**
        @return a string representation of this list,
        in [a,b,c,] format
-      */ 
+      */
     public String toString() {
-		String output = "["; 
-		//prints out all elements in the "list", but not the entire capacity
-		for (int pos = 0; pos < numElements; pos++){ 
-			output += masterArray[pos] + ",";
-		}	
-		output += "]";
-		return output;
+        String result = "[";
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            result += elements[ elemIndex] + ",";
+        return result + "]";
     }
 
-    
-    /** 
+
+    /**
       Appends @value to the end of this list.
-      
+
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean add( int value) {
-		 numElements++; //add one slot to the "list"
-		 if (numElements == masterArray.length)
-			 expand(); //doubles the capacity if there is no space left for the value
-		 
-		 masterArray[numElements - 1] = value; //inputs the value for the added slot
-		 return true;
-     }
+         // expand if necessary
+         if( filledElements == elements.length) expand();
+
+         elements[ filledElements] = value;
+         filledElements++;
+         // idiomatic version: elements[ filledElements++] = value;
+        return true;
+}
 
 
-    /** 
-      Double the capacity of the List_inArraySlots, 
-      preserving existing data
+    /**
+      Double the capacity of the List_inArraySlots,
+      preserving existing data.
      */
      private void expand() {
-		 System.out.println("expand ... (for debugging)");
-		 
-		 arraySize *= 2; //doubles the size of the capacity
-		 int[] tempArray = new int[arraySize]; //new array with double the capacity of masterArray
-		 
-		 for (int pos = 0 ; pos < masterArray.length ; pos++){
-			 tempArray[pos] = masterArray[pos]; // preserving the existing data in masterArray
-		 }
-		 masterArray = tempArray; 
+        System.out.println( "expand... (for debugging)");
+           /* S.O.P. rules for debugging:
+              Working methods should be silent. But during
+              development, the programmer must verify that
+              this method is called when that is appropriate.
+              So test using the println(), then comment it out.
+              */
+        int[] bigger = new int[ elements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            bigger[ elemIndex] = elements[ elemIndex];
+        elements = bigger;
      }
+	 
+	 
+	     /**
+      accessor
+      @return element @index from this list
+      precondition: @index is within the bounds of the array.
+          (Having warned the user about this precondition,
+           you should NOT complicate your code to check
+           whether user violated the condition.)
+     */
+    public int get( int index ) {
+		return elements[index];
+    }
+
+
+    /**
+      Set value at @index to @newValue
+      @return old value at @index
+      @precondition: @index is within the bounds of this list.
+     */
+    public int set( int index, int newValue ) {
+		int oldValue = elements[index];
+		elements[index] = newValue;
+		return oldValue;
+    }
+
+
+    // /**
+      // Insert @value at position @index in this list.
+      // Shift the element currently at that position (if any)
+      // and any subsequent elements to the right
+      // (that is, increase the index associated with each).
+     // */
+     // public void add( int index, int value) {
+		 
+     // }
+
+
+    // /**
+      // Remove the element at position @index in this list.
+      // Shift any subsequent elements to the left (that is,
+      // decrease the index associated with each).
+      // @return the value that was removed from the list
+     // */
+     // public int remove( int index) {
+		 
+     // }
+	 
+	 
+	 
 }
