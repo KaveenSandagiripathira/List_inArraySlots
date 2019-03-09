@@ -105,24 +105,32 @@ public class List_inArraySlots {
       (that is, increase the index associated with each).
      */
      public void add( int index, int value) {
-		 // expand if necessary
-         if( filledElements == elements.length) expand();
+		// expand if necessary
+        if( filledElements == elements.length) expand();
 		 
-		 for( int elemIndex = filledElements - 1; elemIndex >= index; elemIndex--)
-            elements[ elemIndex + 1] = elements[ elemIndex];
+		for( int elemIndex = filledElements - 1; elemIndex >= index; elemIndex--)
+			elements[ elemIndex + 1] = elements[ elemIndex];
 		
-		 elements[index] = value;
-		 filledElements++;
+		elements[index] = value;
+		filledElements++;
      }
 
 
-    // /**
-      // Remove the element at position @index in this list.
-      // Shift any subsequent elements to the left (that is,
-      // decrease the index associated with each).
-      // @return the value that was removed from the list
-     // */
-     // public int remove( int index) {
-     // }
+    /**
+      Remove the element at position @index in this list.
+      Shift any subsequent elements to the left (that is,
+      decrease the index associated with each).
+      @return the value that was removed from the list
+     */
+     public int remove( int index) {
+		 // holds value for old value of removed index
+		int oldValue = elements[index];
+		for( int elemIndex = index; elemIndex < filledElements - 1; elemIndex++)
+			elements[ elemIndex] = elements[ elemIndex + 1];
+		
+		elements[ filledElements - 1] = 0;
+		filledElements--;
+		return oldValue;
+     }
 	 
 }
