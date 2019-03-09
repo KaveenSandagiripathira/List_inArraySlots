@@ -54,6 +54,20 @@ public class UserOfList {
         System.out.println();
 		
 		
+		// test adding at a specified position
+        addAtTest( 0, 29); // beginning of the list
+
+        // end of the list using the new add method
+        addAtTest( list.size(), 17);
+
+        addAtTest( 2, 19); // middle of a small list
+
+        // force an expansion
+        addAtTest( 2, 23);
+        addAtTest( 2, 23);
+        addAtTest( 2, 23);
+		
+		
     }  // end of main()
 	
 	/**
@@ -68,4 +82,21 @@ public class UserOfList {
           + list.get( modifyAt)
           );
      }
+	 
+	  /**
+      Test the 2-argument add( index, value) method.
+     */
+    private static void addAtTest( int addAt
+                                 , int value
+                                 ) {
+        list.add( addAt, value);
+        System.out.println(
+            "insert " + value
+          + " at position " + addAt
+          + ", resulting in "  + list.size() + " elements:"
+          + System.lineSeparator()
+          + list
+          + System.lineSeparator()
+        );
+    }
 }

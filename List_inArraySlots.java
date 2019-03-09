@@ -98,16 +98,22 @@ public class List_inArraySlots {
 		return oldValue;
     }
 
-
-    // /**
-      // Insert @value at position @index in this list.
-      // Shift the element currently at that position (if any)
-      // and any subsequent elements to the right
-      // (that is, increase the index associated with each).
-     // */
-     // public void add( int index, int value) {
+	/**
+      Insert @value at position @index in this list.
+      Shift the element currently at that position (if any)
+      and any subsequent elements to the right
+      (that is, increase the index associated with each).
+     */
+     public void add( int index, int value) {
+		 // expand if necessary
+         if( filledElements == elements.length) expand();
 		 
-     // }
+		 for( int elemIndex = filledElements - 1; elemIndex >= index; elemIndex--)
+            elements[ elemIndex + 1] = elements[ elemIndex];
+		
+		 elements[index] = value;
+		 filledElements++;
+     }
 
 
     // /**
@@ -117,9 +123,6 @@ public class List_inArraySlots {
       // @return the value that was removed from the list
      // */
      // public int remove( int index) {
-		 
      // }
-	 
-	 
 	 
 }
