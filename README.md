@@ -33,10 +33,23 @@ public boolean add (int value)
 
 // Doubles the capacity, preserving existing data
 private void expand()
+
+// Accessor method for the list which returns the element at the given index
+public int get( int index )
+
+// Mutator method for the list which sets the element at the given index to the specified value
+public int set( int index, int newValue )
+
+// Adds the specified integer, "value", to the specified location, "index"
+public void add( int index, int value)
+
+// Removes the element at the specified location, "index"
+public int remove( int index)
 ```
 
 ## UserOfList class:
 - Creates an instance of List_inArraySlots
 - Incrementally adds elements to the list using list.add()
+- Has several helper methods such as setTest and addAtTest which puts into string form the new functionality. 
  
 
